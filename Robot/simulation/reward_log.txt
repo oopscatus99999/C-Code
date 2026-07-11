@@ -1,0 +1,5 @@
+ep=1  total=-11926.99  per_step=-14.165  steps=842  end=goal  mean100=-11926.99  mean_len=842  coll%=0.0  a_loss=-0.1659  c_loss=17527.4768
+ep=2  total=-4040.15  per_step=-30.150  steps=134  end=collision  mean100=-7983.57  mean_len=488  coll%=50.0  a_loss=-0.2560  c_loss=162645.2788
+ep=3  total=-9057.81  per_step=-25.372  steps=357  end=collision  mean100=-8341.65  mean_len=444  coll%=66.7  a_loss=-0.1946  c_loss=131301.0733
+ep=4  total=-9945.45  per_step=-12.479  steps=797  end=goal  mean100=-8742.60  mean_len=532  coll%=50.0  a_loss=-0.1663  c_loss=11274.3357
+ep=5  total=-5258.72  per_step=-42.409  steps=124  end=collision  mean100=-8045.83  mean_len=451  coll%=60.0  a_loss=-0.1976  c_loss=428350.5797
