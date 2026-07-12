@@ -1,0 +1,50 @@
+GOAL:
+Input: 3
+  ***
+  * *
+ *****
+ * * *
+*******
+* * * *
+*******
+
+Pseudocode
+1st: Take user input
+
+2nd: Check if the number < 0 or > 999
+
+3rd: Nested Loop to print pyramid
+
+4th: 1st for loop to loop each layer of the pyramid
+for int i = 1; i < input; i++
+
+5th: 1st INSIDE LOOP print the space out
+for j = 0; input - i; j++
+
+6th: 2nd INSIDE LOOP print the *
+for j = 0; j < (2i + 1); j++
+ENDL
+
+7th: 3rd INSIDE LOOP print space for alternate row
+
+for j = 0; input - i; j++
+
+BOOL star to alternate between * and 'space'
+8th: 4th INSIDE LOOP 
+
+for j = 0; j < (2i + 1); j++
+if(true)
+print star
+else
+print space
+switch bool star to false
+
+ENDL
+
+
+print the FINAL space row
+for j = 0; j < (2i + 1); j++
+print *
+ENDL
+
+
