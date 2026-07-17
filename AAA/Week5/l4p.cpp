@@ -70,3 +70,36 @@ TEST(ArrayTests, ElementAccess) {
 
     delete[] arr;
 }
+// Final Challenge
+// Bank class exist
+// BankAccount(int initial_balance)
+// Have: int getBalance()
+// void deposit(int amount)
+// Expected First, Actual Second
+// Goal: Write 3 unit tests
+
+// Test 1: Verify the balance correct
+TEST(BankAccountTest, checkBalanceIsCorrect)
+{
+    BankAccount accout(100);
+    EXPECT_EQ(100, account.getBalance());
+}
+// Test 2: Verify deposit correct increase the balance
+TEST(BankAccountTest, IncreaseBalance)
+{
+    BankAccount accout(100);
+    account.deposit(50);
+    EXPECT_EQ(150, account.getBalance());
+}
+// Test 3: Verify multiple deposits stack correctly
+TEST(BankAccountTest, multiDeposit)
+{
+    BankAccount accout(100);
+    account.deposit(50);
+    account.deposit(50);
+    account.deposit(50);
+    EXPECT_EQ(250, account.getBalance());
+}
+
+// Use correct macro
+
