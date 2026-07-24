@@ -73,6 +73,56 @@ member functions or member variables other than what you see listed above, which
 */
 // Problem 4:
 /*
+// Test fixture for shared setup if needed, or simple individual tests
+TEST(GroceryPurchaseTest, InitialStateIsZero) {
+    GroceryPurchase purchase{0.0775}; // 7.75% tax rate
+    
+    EXPECT_DOUBLE_EQ(purchase.getTaxRate(), 0.0775);
+    EXPECT_EQ(purchase.getSubtotal(), 0);
+    EXPECT_EQ(purchase.getTax(), 0);
+    EXPECT_EQ(purchase.getTotal(), 0);
+}
 
+TEST(GroceryPurchaseTest, AddNonTaxableItem) {
+    GroceryPurchase purchase{0.08};
+    GroceryItem bread{2, 250, false}; // 2 loaves at 250 cents ($2.50)
+    
+    purchase.addItem(bread);
+    
+    EXPECT_EQ(purchase.getSubtotal(), 500);
+    EXPECT_EQ(purchase.getTax(), 0);
+    EXPECT_EQ(purchase.getTotal(), 500);
+}
+
+TEST(GroceryPurchaseTest, AddTaxableItem) {
+    // Note: Since subtotal and tax are unsigned ints, tax calculation casts 
+    // the double result down (truncating decimals).
+    GroceryPurchase purchase{0.10}; // 10% tax rate
+    GroceryItem paperTowels{1, 1000, true}; // 1 pack at 1000 cents ($10.00)
+    
+    purchase.addItem(paperTowels);
+    
+    EXPECT_EQ(purchase.getSubtotal(), 1000);
+    EXPECT_EQ(purchase.getTax(), 100); // 1000 * 0.10 = 100
+    EXPECT_EQ(purchase.getTotal(), 1100);
+}
+
+TEST(GroceryPurchaseTest, ClearResetsTotals) {
+    GroceryPurchase purchase{0.05};
+    GroceryItem item{1, 500, false};
+    
+    purchase.addItem(item);
+    purchase.clear();
+    
+    EXPECT_EQ(purchase.getSubtotal(), 0);
+    EXPECT_EQ(purchase.getTax(), 0);
+    EXPECT_EQ(purchase.getTotal(), 0);
+}
+
+// Standard main function required to launch Google Test
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
 */
 
